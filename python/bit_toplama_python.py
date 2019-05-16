@@ -34,20 +34,20 @@ def tikla(x, y):
     # time.sleep(0.00001)
 
 
-def git(yon="sağ"):
-    if yon == "sağ":
+def git(yonn="sağ"):
+    if yonn == "sağ":
         pyautogui.mouseDown(konum_sag[0], konum_sag[1])
         time.sleep(konum_saniye)
         pyautogui.mouseUp(konum_sag[0], konum_sag[1])
-    elif yon == "sol":
+    elif yonn == "sol":
         pyautogui.mouseDown(konum_sol[0], konum_sol[1])
         time.sleep(konum_saniye)
         pyautogui.mouseUp(konum_sol[0], konum_sol[1])
-    elif yon == "yukarı":
+    elif yonn == "yukarı":
         pyautogui.mouseDown(konum_yukari[0], konum_yukari[1])
         time.sleep(konum_saniye)
         pyautogui.mouseUp(konum_yukari[0], konum_yukari[1])
-    elif yon == "aşağı":
+    elif yonn == "aşağı":
         pyautogui.mouseDown(konum_asagi[0], konum_asagi[1])
         time.sleep(konum_saniye)
         pyautogui.mouseUp(konum_asagi[0], konum_asagi[1])
@@ -56,13 +56,13 @@ def git(yon="sağ"):
         print(saat(), " yukarı, aşağı, sol ve sağ yönler vardır sadece")
 
 
-def bittopla(yontem="random"):
+def bittopla(yontemm="random"):
     global toplandi
     toplandi += 1
-    print(saat(), " ", str(toplandi), ". kez bit toplanmaya başlandı. yöntem: ", yontem)
+    print(saat(), " ", str(toplandi), ". kez bit toplanmaya başlandı. yöntem: ", yontemm)
     time.sleep(3)
     tikla(690, 420)
-    if yontem == "random":
+    if yontemm == "random":
         while True:
             if bittimi():
                 print(saat(), " random bit toplama bitti.")
@@ -70,7 +70,7 @@ def bittopla(yontem="random"):
             x = random.randint(505, 860)
             y = random.randint(137, 680)
             tikla(x, y)
-    elif yontem == "ara":
+    elif yontemm == "ara":
         while True:
             if bittimi():
                 print(saat(), " ara bit toplama bitti.")
@@ -80,7 +80,7 @@ def bittopla(yontem="random"):
             eslesme = pyautogui.pixelMatchesColor(x, y, (0, 0, 0))
             if eslesme:
                 tikla(x, y)
-    elif yontem == "ara_resimli":
+    elif yontemm == "ara_resimli":
         while True:
             try:
                 if bittimi():
@@ -90,7 +90,7 @@ def bittopla(yontem="random"):
                 tikla(x, y)
             except TypeError:
                 pass
-    elif yontem == "sıralı":
+    elif yontemm == "sıralı":
         bitis = 0
         while bitis == 0:
             for x in range(517, 860, 60):
@@ -108,7 +108,7 @@ def bittopla(yontem="random"):
 
 
 def saat():
-    return (str(time.strftime('%X')))
+    return str(time.strftime('%X'))
 
 
 def bittimi():
